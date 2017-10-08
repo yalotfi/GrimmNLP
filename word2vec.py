@@ -6,13 +6,13 @@ from nltk import sent_tokenize
 from nltk import word_tokenize
 
 
-def main():
+def main(fname):
     # utilies
     logging.basicConfig(
         format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO
     )
     directory = 'embeddings'
-    fcorpus = 'grimm_corpus.txt'
+    fcorpus = os.path.join('data', fname)
 
     # preprocessing
     corpus = open(fcorpus).read().lower()
@@ -31,4 +31,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    fname = 'roc_grimm_lemmas.txt'
+    main(fname)
